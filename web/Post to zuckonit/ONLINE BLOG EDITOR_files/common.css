@@ -1,0 +1,273 @@
+/* Global Attributes */
+
+html, body { /* background goes here because of XHTML semantics */
+    background-color: #F9F9FF;
+    color: #000;
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0 0 3em 0;
+}
+
+/* needs some tuning */
+a {
+    color: #00E;
+}
+
+a:visited {
+    color: #551A8B
+}
+
+a:hover {
+    color: #FF6600;
+}
+
+a:active {
+    color: #E00;
+}
+
+/* Header <common-header.xml> */
+
+#header {
+    margin: 0;
+    background: #4A6282;
+    background-position: right 0.2em;
+    color: #FFF;
+    width: 100%;
+}
+
+#header a {
+    margin: 0.5em 5%;
+    color: #FFF;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-variant: small-caps;
+    letter-spacing: 0.2em;
+    font-size: 2em;
+    line-height: 2em;
+}
+
+#header a:hover {
+    color: #E0E2E6;
+}
+
+/* navigation */
+
+#navigation {
+    margin: 0;
+    padding: 0;
+    border: solid #8AA0BC;
+    border-width: 1px 0;
+    background: #6480A6;
+    width: 100%;
+}
+
+#navigation h2 {
+    display: none;
+}
+
+#navigation ol {
+    margin: 0 5%;
+    padding: 0;
+    display: block;
+}
+
+#navigation li {
+    display: inline;
+    line-height: 1.7em;
+    margin: 0 0.6em 0 0; /* is readjusted by index.css */
+}
+
+#navigation li a {
+    color: #FFF;
+    text-decoration: none;
+    padding: 0.3em;
+}
+
+#navigation li a:hover {
+    background: #BCC8D8;
+}
+
+/* Main (spans everything that shouldn't go to the margins */
+#main {
+    clear: left;
+    margin: 2em auto;
+    padding: 0 5%;
+    max-width: 52em;
+}
+
+/* Title (usually h1, is inside #main for subpages) */
+#title {
+    font-weight: normal;
+    font-size: 2em;
+    border-bottom: 1px solid #BCC8D8;
+    margin-top: 2em;
+}
+
+/* main-content (text of a document, not the main header or sub-navigation) */
+#main-content {
+}
+
+#main-content h2 {
+    font-weight: normal;
+    font-size: 1.5em;
+    border-bottom: 1px solid #AAA;
+    margin-top: 2em;
+}
+
+#main-content h3 {
+
+}
+
+#main-content li {
+    margin: 0.8em 0;
+}
+
+#toc li {
+    margin: 0;
+}
+
+p {
+    line-height: 1.4em;
+}
+
+
+#main-content p {
+    margin: 0;
+    text-indent: 2em;
+}
+
+#main-content p.lead {
+    text-indent: 0;
+}
+
+blockquote.digression {
+    font: 11pt Helvetica, sans-serif;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+blockquote.fancy {
+    background: transparent url(quote-left.png) left top no-repeat;
+    margin: 1em 3%;
+}
+
+blockquote.fancy div.quote {
+    background: transparent url(quote-right.png) right bottom no-repeat;
+    padding: .5em 48px .5em;
+}
+
+blockquote.fancy div.origin {
+    text-align: right;
+}
+
+#main-content pre {
+    margin-left: 4em;
+}
+
+#main-content pre.long {
+    margin-left: 2%;
+    width: 100%;
+    overflow: auto;
+}
+
+#main-content form {
+    margin: 1em;
+}
+
+li {
+    line-height: 1.4em;
+}
+
+ol.notes {
+    font-size: 8pt;
+}
+
+ul.long li {
+    margin-top: 1em;
+}
+
+ol.long li {
+    margin-top: 1em;
+}
+
+.clear {
+    clear: both;
+}
+
+/* sheet for blog */
+
+#output > div {
+    border: 5px solid #bcc8d8;
+    margin: 1em 10%;
+    padding: 1em;
+}
+
+#source {
+    width: 95%;
+    overflow: auto;
+    border: 1px solid #BCC8D8;
+    padding: 2%;
+    background: #F0F0FB;
+    max-height: 20em;
+}
+
+#textarea {
+    min-width: 20em;
+}
+
+textarea {
+    width: 100%;
+}
+
+/* twiddle with this value as we add and remove controls */
+#textarea textarea {
+    height: 15em;
+    margin-bottom: 1em;
+}
+
+#main-content .hp-config {
+    width: 21em;
+    float: right;
+    font-size: 1em;
+    margin: 0;
+}
+
+#controls {
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    border-top: 1px solid #848484;
+}
+
+.buttons {
+    display: flex;
+    justify-main-content: flex-end;
+    align-items: center;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #6480a6;
+    border-radius: 0.25em;
+    height: 80%;
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 8px 10px;
+    margin: 8px 5px;
+}
+
+

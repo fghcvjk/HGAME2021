@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: #a685e2;
+}
+
+.main {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-box {
+    height: 100%;
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.left-box {
+    width: 100vw;
+    display: flex;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-self: left;
+    flex-direction: column;
+}
+
+.form-wish {
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.form-group {
+    padding: 0 3rem;
+    width: 100%;
+    display: flex;
+}
+
+.form-group>* {
+    margin: 0 1rem;
+}
+
+.title {
+    color: #fff;
+    font-weight: bold;
+    font-size: 10rem;
+    text-align: left;
+    line-height: 110px;
+    padding-top: 5rem;
+}
+
+.title-little {
+    color: #fff;
+    font-weight: bold;
+    font-size: 5rem;
+    text-align: left;
+    line-height: 110px;
+    padding: 5rem 0;
+}
+
+.title-discription {
+    color: #fff;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: left;
+    line-height: 110px;
+}
+
+.input-area {
+    width: 100%;
+}
+
+.input-area-name, #reset {
+    flex: 1;
+}
+
+.input-area-disc {
+    flex: 3;
+}

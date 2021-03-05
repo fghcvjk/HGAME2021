@@ -1,0 +1,63 @@
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="ONLINE%20BLOG%20EDITOR_files/common.css" rel="stylesheet" type="text/css">
+    <title>ONLINE BLOG EDITOR</title>
+</head>
+
+<body>
+<div id="header">
+    <a href="#">Online Blog Editor</a>
+</div>
+<div id="navigation">
+    <ol>
+        <li><a href="#">Editor</a></li>
+        <li><a href="http://zuckonit.0727.site:7654/flag">Flag</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Help</a></li>
+    </ol>
+</div>
+<div id="main">
+    <h1 id="title">Post to Zuckonit</h1>
+    <div id="main-content">
+        <form id="filter" onsubmit="return false">
+            <fieldset>
+                <legend>Write Down What On your Mind</legend>
+                <div id="textarea">
+                    <label>
+                        <textarea id="content" cols="30" rows="1"></textarea>
+                    </label>
+                </div>
+                <p class="lead">Attention: you can freely <strong>post</strong> your thoughts to this page.
+                    But this online editor is vulnerable to attack,
+                    so you can write down
+                    <strong>XSS</strong>
+                    sentences and <strong>submit</strong> them to bot backend, and CAPTCHA is necessary.
+                </p>
+                <div id="controls">
+                    <div class="buttons">
+                        <button id="send" class="button">Post it!</button>
+                        <label for="captcha"></label><input type="text" placeholder="Code: md5(code)[:6] == ce7b16" id="captcha" autocomplete="off">
+                        <button id="submit" class="button">Submit</button>
+                        <button id="clear" class="button">Clear posts</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <div id="output">
+            
+            <div><i>2021-02-06</i><p>I have tried to learn HTML the 
+whole yesterday, and I finally made this ONLINE BLOG EDITOR. Feel free 
+to write down your thoughts.</p></div>
+            
+            <div><i>2021-02-05</i><p>Yesterday, I watched <i>The Social Network</i>. It really astonished me. Something flashed me.</p></div>
+            
+        </div>
+    </div>
+
+</div>
+
+<script src="ONLINE%20BLOG%20EDITOR_files/jquery.js"></script>
+<script src="ONLINE%20BLOG%20EDITOR_files/script.js"></script>
+</body></html>

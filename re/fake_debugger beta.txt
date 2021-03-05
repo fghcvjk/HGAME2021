@@ -1,0 +1,5 @@
+root@ubuntu:~# nc 101.132.177.131 9999
+Welcome to Processor's debugger for Hgame!
+Please input you flag now!
+cat flag
+Short flag!

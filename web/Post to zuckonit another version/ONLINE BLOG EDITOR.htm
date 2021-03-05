@@ -1,0 +1,66 @@
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- source /static/www.zip -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="ONLINE%20BLOG%20EDITOR_files/common.css" rel="stylesheet" type="text/css">
+    <title>ONLINE BLOG EDITOR</title>
+    <script src="ONLINE%20BLOG%20EDITOR_files/jquery-3.js"></script>
+    <script src="ONLINE%20BLOG%20EDITOR_files/script.js"></script>
+</head>
+
+<body>
+<div id="header">
+    <a href="#">Online Blog Editor</a>
+</div>
+<div id="navigation">
+    <ol>
+        <li><a href="#">Editor</a></li>
+        <li><a href="http://zuckonit-2-another.0727.site:5050/flag">Flag</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Help</a></li>
+    </ol>
+</div>
+<div id="main">
+    <h1 id="title">Post to Zuckonit</h1>
+    <div id="main-content">
+        <div id="filter">
+            <fieldset>
+                <legend>Write Down What On your Mind</legend>
+                <div id="textarea">
+                    <label>
+                        <textarea id="content" cols="30" rows="1"></textarea>
+                    </label>
+                </div>
+                <p class="lead">Attention: you can freely <strong>post</strong> your thoughts to this page.
+                    But this online editor is vulnerable to attack,
+                    so you can write down
+                    <strong>XSS</strong>
+                    sentences and <strong>submit</strong> them to bot backend, and CAPTCHA is necessary.
+                </p>
+                <div id="controls">
+                    <div class="buttons">
+                        <label for="content"></label><input type="text" placeholder="what do you want to search for?" id="substr" autocomplete="off">
+                        <button id="search" class="button">Search!</button>
+                    </div>
+                    <div class="buttons">
+                        <button id="send" class="button">Post it !</button>
+                        <label for="captcha"></label><input type="text" placeholder="Code: md5(code)[:6] == da70ab" id="captcha" autocomplete="off">
+                        <button id="submit" class="button">Submit</button>
+                        <button id="clear" class="button">Clear posts</button>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+        <div id="output"><div><i>2021-02-12</i><p>Happy New Year every guys! Maybe it is nearly done now.</p></div><div><i>2021-02-11</i><p>Busy
+ preparing for the Chinese New Year... And I add some new features to 
+this editor, maybe you can take a try. But it has not done yet, I'm not 
+sure if it can be safe from attacks.</p></div><div><i>2021-02-07</i><p>so many hackers here, I am going to add some strict rules.</p></div><div><i>2021-02-06</i><p>I
+ have tried to learn HTML the whole yesterday, and I finally made this 
+ONLINE BLOG EDITOR. Feel free to write down your thoughts.</p></div><div><i>2021-02-05</i><p>Yesterday, I watched <i>The Social Network</i>. It really astonished me. Something flashed me.</p></div></div>
+    </div>
+
+</div>
+
+</body></html>

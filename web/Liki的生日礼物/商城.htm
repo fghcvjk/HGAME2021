@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/bootstrap.css"/>
+    <script src="/static/js/jquery-3.4.1.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/shop.js"></script>
+    <title>商城</title>
+</head>
+<body>
+    <div class="modal-dialog" style="margin-top: 10%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-center" id="myModalLabel">登录</h4>
+            </div>
+            <div class="modal-body" id = "model-body">
+                <div class="form-group">
+                    <input type="text" id="name" class="form-control"placeholder="用户名" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" class="form-control" placeholder="密码" autocomplete="off">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary form-control" onclick=login()>登录</button>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-default form-control" onclick="location.href='register.html'">注册</button>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</body>
+</html>

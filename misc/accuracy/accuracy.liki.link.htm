@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+
+<body>
+    <div id="app">
+        <el-container>
+            <el-header>
+                <div style="margin: 20px 0;text-align:center">
+                    <h1>Get Your Accuracy</h1>
+                </div>
+            </el-header>
+            <el-main>
+                </el-input>
+                <div style="margin: 20px 0;" v-show="submited" sytle="text-align:center">上传中</div>
+                <el-progress v-bind:percentage="per" v-show="submited"></el-progress>
+                <div style="margin: 20px 0;"></div>
+                <el-form ref="form" :model="form" label-width="80px">
+                    <el-form-item label="key">
+                        <el-input type="textarea" :autosize="{ minRows: 5, maxRows: 10}" placeholder="请输入内容"
+                            v-model="user_text"></el-input>
+                    </el-form-item>
+                    <!-- <el-form-item>
+                        <el-button type="primary" @click="onSubmit">立即创建</el-button>
+                        <el-button>取消</el-button>
+                    </el-form-item> -->
+                </el-form>
+
+                <div style="margin: 20px 0;">
+                    <el-button type="primary" :loading="false" style="display:block;margin:0 auto" @click="onSubmit">上传
+                    </el-button>
+                </div>
+                <div style="margin: 20px 0;text-align:center">
+                    <div v-show="submited" style="margin: 20px 0;text-align:center">
+                        <h2>Accuracy</h2>
+                    </div>
+                    <el-progress type="circle" v-show="submited" :percentage="score" color="#5cb87a" :format="output">
+                    </el-progress>
+                </div>
+                <div style="margin: 20px 0;text-align:center" v-show="passed">
+                    <p v-text="flagglaf"></p>
+                </div>
+            </el-main>
+        </el-container>
+    </div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                visible: false,
+                user_text: '',
+                submited: false,
+                per: 0,
+                score: 0,
+                flagglaf: "",
+                passed: false,
+            }
+        },
+        methods: {
+            onSubmit() {
+                console.log(this.user_text);
+                if (this.user_text.trim().length % 4 == 0) {
+                    this.submited = true;
+                    axios
+                        .post("https://accuracy.liki.link/check", {
+                            text: this.user_text.trim(),
+                        })
+                        .then(response => {
+                            console.log(response);
+                            console.log(response.data.ifok);
+                            console.log(response.data.ifok == 1);
+                            if (response.data.ifok == 1) {
+                                this.score = response.data.score * 100;
+                                this.flagglaf = response.data.flag;
+                                this.ok("成功");
+                                this.per = 100;
+                                this.passed = true;
+                            } else {
+                                this.submited = false;
+                                this.passed = false;
+                                this.score = 0;
+                                this.warn("您识别结果的准确率小于95%,请改进。");
+                                this.per = 100;
+                            }
+
+                        }).catch(function (error) {
+                            console.log(error);
+                            vm.submited = false;
+                            vm.passed = false;
+                            vm.score = 0;
+                            if (error.response.status == "406"){
+                                vm.qerr("访问过于频繁,请60秒后再试！");
+                            } else{
+                                vm.qerr("格式(长度)错误");
+                            }
+                            vm.per = 100;
+                        });
+                } else {
+                    this.warn('长度错误');
+                }
+
+            },
+            ok(str) {
+                this.$message({
+                    message: str,
+                    type: 'success'
+                });
+            },
+            warn(str) {
+                this.$message({
+                    message: str,
+                    type: 'warning'
+                });
+            },
+
+            qerr(str) {
+                this.$message.error(str);
+            },
+            output(percentage) {
+                return this.score + "%";
+            }
+
+        }
+    })
+</script>
+<style>
+</style>
+
+</html>

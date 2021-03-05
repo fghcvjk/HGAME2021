@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="%E6%9C%89%E8%83%BD%E8%80%90%E6%AF%94%E5%88%92%E6%AF%94%E5%88%92_files/bootstrap.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <script src="%E6%9C%89%E8%83%BD%E8%80%90%E6%AF%94%E5%88%92%E6%AF%94%E5%88%92_files/jquery-3.js"></script>
+        <script src="%E6%9C%89%E8%83%BD%E8%80%90%E6%AF%94%E5%88%92%E6%AF%94%E5%88%92_files/fuckmath.js"></script>
+        <title>有能耐比划比划</title>
+    </head>
+    <body>
+        <div class="alert alert-dark" role="alert">
+            大学生智商检测仪
+        </div>
+
+        <hr class="my-4">
+
+        <div class="container">
+
+            <div class="jumbotron">
+                <p class="lead" align="center">检测一下智商，做完这些简单的定积分题目然后获取Flag吧！<small>(积分式全部为ax+b的形式)</small></p>
+                <p class="lead" align="center">当前进度：<var id="status">0</var> / 100</p>
+            </div>
+
+
+            <div id="integral" align="center"><math><mrow><msubsup><mo>∫</mo><mrow><mo>-</mo><mn>92</mn></mrow><mrow><mn>31</mn></mrow></msubsup><mo>(</mo><mn>12</mn><mi>x</mi><mo>+</mo><mn>17</mn><mo>)</mo><mtext><mi>d</mi></mtext><mi>x</mi><mtd></mtd></mrow></math></div>
+            <div id="flag" align="center">
+            </div>
+            <div id="alert" align="center">
+            </div>
+            <input id="answer" name="anwser" placeholder="保留两位小数">
+            <button onclick="submit()" class="btn btn-primary">检测智商</button>
+            
+        </div>
+        <script>
+            init();
+        </script>
+    
+</body></html>

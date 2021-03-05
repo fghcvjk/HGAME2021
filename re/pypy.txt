@@ -1,0 +1,95 @@
+  4           0 LOAD_GLOBAL              0 (input)
+              2 LOAD_CONST               1 ('give me your flag:\n')
+              4 CALL_FUNCTION            1
+              6 STORE_FAST               0 (raw_flag)
+
+  5           8 LOAD_GLOBAL              1 (list)
+             10 LOAD_FAST                0 (raw_flag)
+             12 LOAD_CONST               2 (6)
+             14 LOAD_CONST               3 (-1)
+             16 BUILD_SLICE              2
+             18 BINARY_SUBSCR
+             20 CALL_FUNCTION            1
+             22 STORE_FAST               1 (cipher)
+
+  6          24 LOAD_GLOBAL              2 (len)
+             26 LOAD_FAST                1 (cipher)
+             28 CALL_FUNCTION            1
+             30 STORE_FAST               2 (length)
+
+  8          32 LOAD_GLOBAL              3 (range)
+             34 LOAD_FAST                2 (length)
+             36 LOAD_CONST               4 (2)
+             38 BINARY_FLOOR_DIVIDE
+             40 CALL_FUNCTION            1
+             42 GET_ITER
+        >>   44 FOR_ITER                54 (to 100)
+             46 STORE_FAST               3 (i)
+
+  9          48 LOAD_FAST                1 (cipher)
+             50 LOAD_CONST               4 (2)
+             52 LOAD_FAST                3 (i)
+             54 BINARY_MULTIPLY
+             56 LOAD_CONST               5 (1)
+             58 BINARY_ADD
+             60 BINARY_SUBSCR
+             62 LOAD_FAST                1 (cipher)
+             64 LOAD_CONST               4 (2)
+             66 LOAD_FAST                3 (i)
+             68 BINARY_MULTIPLY
+             70 BINARY_SUBSCR
+             72 ROT_TWO
+             74 LOAD_FAST                1 (cipher)
+             76 LOAD_CONST               4 (2)
+             78 LOAD_FAST                3 (i)
+             80 BINARY_MULTIPLY
+             82 STORE_SUBSCR
+             84 LOAD_FAST                1 (cipher)
+             86 LOAD_CONST               4 (2)
+             88 LOAD_FAST                3 (i)
+             90 BINARY_MULTIPLY
+             92 LOAD_CONST               5 (1)
+             94 BINARY_ADD
+             96 STORE_SUBSCR
+             98 JUMP_ABSOLUTE           44
+
+ 12     >>  100 BUILD_LIST               0
+            102 STORE_FAST               4 (res)
+
+ 13         104 LOAD_GLOBAL              3 (range)
+            106 LOAD_FAST                2 (length)
+            108 CALL_FUNCTION            1
+            110 GET_ITER
+        >>  112 FOR_ITER                26 (to 140)
+            114 STORE_FAST               3 (i)
+
+ 14         116 LOAD_FAST                4 (res)
+            118 LOAD_METHOD              4 (append)
+            120 LOAD_GLOBAL              5 (ord)
+            122 LOAD_FAST                1 (cipher)
+            124 LOAD_FAST                3 (i)
+            126 BINARY_SUBSCR
+            128 CALL_FUNCTION            1
+            130 LOAD_FAST                3 (i)
+            132 BINARY_XOR
+            134 CALL_METHOD              1
+            136 POP_TOP
+            138 JUMP_ABSOLUTE          112
+
+ 15     >>  140 LOAD_GLOBAL              6 (bytes)
+            142 LOAD_FAST                4 (res)
+            144 CALL_FUNCTION            1
+            146 LOAD_METHOD              7 (hex)
+            148 CALL_METHOD              0
+            150 STORE_FAST               4 (res)
+
+ 16         152 LOAD_GLOBAL              8 (print)
+            154 LOAD_CONST               6 ('your flag: ')
+            156 LOAD_FAST                4 (res)
+            158 BINARY_ADD
+            160 CALL_FUNCTION            1
+            162 POP_TOP
+            164 LOAD_CONST               0 (None)
+            166 RETURN_VALUE
+
+# your flag: 30466633346f59213b4139794520572b45514d61583151576638643a
